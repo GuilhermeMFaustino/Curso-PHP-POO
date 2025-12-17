@@ -27,7 +27,6 @@
 
     $carrinho->add($prophp);
     $carrinho->add($wsphp);
-    $carrinho->add($prohtml);
 
     $carrinho->remove($wsphp);
 
