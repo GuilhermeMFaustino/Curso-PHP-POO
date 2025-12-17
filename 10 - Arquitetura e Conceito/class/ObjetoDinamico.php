@@ -1,7 +1,7 @@
 <?php 
 
 
-class ObjetoDinmaico
+class ObjetoDinamico
 {
     public $nome;
     private $email;
