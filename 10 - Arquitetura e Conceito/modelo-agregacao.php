@@ -30,7 +30,6 @@
     $carrinho->add($prohtml);
 
     $carrinho->remove($wsphp);
-    $carrinho->remove($outroCurso);
 
     var_dump($carrinho);
 
