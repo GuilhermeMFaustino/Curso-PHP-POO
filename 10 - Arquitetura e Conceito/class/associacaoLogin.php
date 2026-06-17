@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 class AssociacaoLogin
@@ -7,16 +7,17 @@ class AssociacaoLogin
     public $cliente;
     private $login;
 
-    function __construct($cliente){
+    function __construct($cliente)
+    {
 
-        if(is_object($cliente)):
+        if (is_object($cliente)):
 
-        $this->cliente = $cliente;
-        $this->login = true;
+            $this->cliente = $cliente;
+            $this->login = true;
 
         else:
 
-            die ("'erro ao logar");
+            die("'erro ao logar");
         endif;
     }
     /**
@@ -25,5 +26,5 @@ class AssociacaoLogin
     public function getLogin()
     {
         return $this->login;
-    }
+    } 
 }

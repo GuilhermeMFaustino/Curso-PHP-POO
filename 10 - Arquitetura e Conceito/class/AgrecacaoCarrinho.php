@@ -3,14 +3,14 @@
 
 class AgrecacaoCarrinho
 {
-    private $cliente;
-    private $produtos;
-    private $total;
+    private object $cliente;
+    private array $produtos;
+    private float $total = 0.0;
 
     public function __construct(AssociacaoCliente $cliente)
     {
         $this->cliente = $cliente;
-        $this->produtos = array();
+        $this->produtos = [];
     }
 
     public function add(AgregacaoProduto $produto)
@@ -27,7 +27,7 @@ class AgrecacaoCarrinho
         $this->vercart($produto, "removeu");
     }
 
-    public function vercart(AgregacaoProduto $produto, $Action)
+    public function vercart(AgregacaoProduto $produto, string $Action)
     {
         echo "Voce {$Action} um {$produto->getNome()} em seu carrinho Valor R$ {$this->total} </br>";
     }

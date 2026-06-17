@@ -11,14 +11,14 @@
     <?php
     require "inc/Config.php";
      
-     $objeto = new ObjetoDinmaico();
+     $objeto = new ObjetoDinamico();
 
      $gui = new stdClass();
      $gui->nome = "Guilherme";
      $gui->email = "gui@gui.com.br";
 
 
-     $objeto->novo($gui);
+     //$objeto->novo($gui);
      var_dump($objeto, $gui);
     ?>
 </body>

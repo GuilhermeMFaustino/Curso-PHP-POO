@@ -3,13 +3,13 @@
 class AgregacaoProduto
 {
     
-    private $produto;
-    private $nome;
-    private $valor;    
+    private string $produto;
+    private string $nome;
+    private float $valor;    
 
 
 
-    public function __construct($produto, $nome, $valor)
+    public function __construct(string $produto, string $nome, float $valor)
     {
         $this->produto = $produto;
         $this->nome = $nome;

@@ -3,10 +3,10 @@
 
 class ObjetoDinamico
 {
-    public $nome;
+    public string $nome;
     private $email;
 
-    public function novo($cliente)
+    public function novo(object $cliente)
     {
         if(is_object($cliente)){
             $this->nome = $cliente->nome;
