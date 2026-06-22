@@ -9,7 +9,7 @@ class Create extends Conn
     private $Result;
 
     /** @var PDOStatement */
-    private $Create;
+    private string $Create;
 
     /** @var PDO */
     private  $Conn;
@@ -23,34 +23,33 @@ class Create extends Conn
         $this->Execute();
     }
 
-    private function Connect()
+    private function Connect(): void
     {
         $this->Conn = parent::getConn();
         $this->Create = $this->Conn->prepare($this->Create);
+        return;
     }
-
-    private function getSyntax() 
+    private function getSyntax(): void
     {
         $fields = implode(', ', array_keys($this->Dados));
         $places = ':' . implode(', :', array_keys($this->Dados));
         $this->Create = "INSERT INTO {$this->Tabela} ({$fields}) VALUES ({$places})";
-
+        return;
     }
 
-    private function Execute()
+    private function Execute(): void
     {
         $this->Connect();
-        try{
-           $this->Create->execute($this->Dados);
-           //var_dump($d);
+        try {
+            $this->Create->execute($this->Dados);
             $this->Result = $this->Conn->lastInsertId();
-        }catch(PDOException $e){
-            $this->Result = null;
-            WSErro("<b> Erro ao Cadastrar <b>, {$e->getMessage()}", $e->getCode());
+        } catch (PDOException $e) {
+           $this->Result = null;
+             WSErro("<b> Erro ao Cadastrar <b>, {$e->getMessage()}", $e->getCode());
         }
     }
 
-    public function getResult()
+    public function getResult() : string|int|null
     {
         return $this->Result;
     }
